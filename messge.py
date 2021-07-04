@@ -1,3 +1,7 @@
+import time
+import random
+
+
 data = []
 count = 0
 with open ('reviews.txt', 'r') as f:
@@ -10,6 +14,9 @@ print('Finshed, It have', len(data), 'message')
 
 print(data[0])	
 
+
+#文字計數
+start_time = time.time()
 wc = {} # word_count
 for d in data:
 	words = d.split(' ')
@@ -21,6 +28,12 @@ for d in data:
 for word in wc:
 	if wc[word] > 100:
 		print(word, wc[word])
+end_time = time.time()
+print('花了', end_time - start_time, 'sec')
+
+
+
+
 
 while True:
 	word = input('What do you want:')
